@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Shoes</title>
+</head>
+<body>
+    <h1>shoes</h1>
+
+    {% if shoes is not empty %}
+        <p>Here are all your shoes:</p>
+        <ul>
+            {% for shoe in shoes %}
+
+            <li>{{ shoe.getBrand }}</li>
+            <ul>
+            <li>{{ shoe.getColor }}</li>
+
+
+        </ul>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/shoes' method='post'>
+        <label for='brand'>Shoe Brand</label>
+        <input id='brand' name='brand' type='text'>
+
+        <form action='/shoes' method='post'>
+            <label for='color'>Shoe Color</label>
+            <input id='color' name='color' type='text'>
+
+        <button type='submit'>Add Shoe</button>
+    </form>
+
+    <form action='/delete_shoes' method='post'>
+        <button type='submit'>delete</button>
+    </form>
+
+
+</body>
+</html>
